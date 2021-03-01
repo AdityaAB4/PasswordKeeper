@@ -1,0 +1,30 @@
+<h3><a class="btn btn-secondary" href="/dashboard"><i class="fa fa-plus"></i>Create New</a> &nbsp  Username and Password List</h3>
+<table class="table table-striped">
+   <thead>
+       <tr>
+           <th>Username</th>
+           <th>Password</th>
+           <th></th>
+       </tr>
+   </thead>
+   <tbody>
+       <script>console.log(docs)</script>
+        <%  users.forEach(doc=>{ %> 
+       <tr>
+           <td>
+               <%= users.username %>
+           </td>
+           <td>
+               <%= users.password %>
+           </td>
+          
+           <td>
+               <a href="/dashboard/{{this._id}}" ><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+               <a href="/dashboard/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record? ')"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+       </tr>
+       <% }) %>
+   </tbody>
+</table>
+
+<%- include ("./css"); %>
